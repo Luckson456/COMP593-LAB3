@@ -70,7 +70,9 @@ def process_sales_data(sales_csv_path, orders_dir_path):
     # TODO: Import the sales data from the CSV file into a DataFrame
     sales_df =pd.read_csv(sales_csv_path)
     # TODO: Insert a new "TOTAL PRICE" column into the DataFrame
+    sales_df.insert(7, 'Total Price',sales_df['Item Quantity']*sales_df['Item Price'])
     # TODO: Remove columns from the DataFrame that are not needed
+    sales_df.drop(columns=['ADDRESS','CITY','STATE','POSTAL CODE','COUNTRY']inplace =True)
     # TODO: Groups orders by ID and iterate 
         # TODO: Remove the 'ORDER ID' column
         # TODO: Sort the items by item number
