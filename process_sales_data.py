@@ -93,10 +93,10 @@ def process_sales_data(sales_csv_path, orders_dir_path):
         worksheet=writer.sheets[f"Order{order_id}"]
         # TODO: Define format for the money columns
         money_format ='${:,2f}'
-        # TODO: Format each colunm
+        # TODO: Format each column
         worksheet.set_column('C:D',15,writer.book.add_format({'num_format':money_format}))
         worksheet.set_column('E:E',15,writer.book .add_format({'num_format':money_format}))
-        # TODO: Close the Excelwriter 
+        # TODO: Close the sheet
         writer.close()
 
     return
